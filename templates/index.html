@@ -1,0 +1,69 @@
+{% extends "layout/webBase.html" %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+{% block content %}
+<!-- banner-section::begin -->
+<section class="banner-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <div class="main-banner-wrapper-info">
+                    <div class="banner-info-wrapper-parent">
+                        <div class="banner-info-wrapper-childs">
+                            <!-- banner-info::begin -->
+                            <div class="banner-info-wrapper">
+                                <h3>TODO LIST APPLICATION</h3>
+                                <div class="info-parent">
+                                    <div class="info-childs">
+                                        <p>Smart</p>
+                                    </div>
+                                    <div class="info-childs">
+                                        <p>Work</p>
+                                    </div>
+                                </div>
+                                <p>Manage your work -</p>
+                                <p class="more-info">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem voluptates sint provident, temporibus deleniti rerum explicabo, aperiam debitis, consequatur quas eum eligendi hic. Tempore reiciendis laborum accusantium magnam dolor aliquid!</p>
+                                <div class="get-started-btn">
+                                    <a href="/login" class="global-btn-primary-with-a">Get Started <i class="fa fa-angle-right"></i></a>
+                                </div>
+                                <div class="social-media-wrapper">
+                                    <a href="">
+                                        <div class="social-icons">
+                                            <i class="fab fa-facebook-f"></i> 
+                                        </div>
+                                    </a>
+                                    <a href="">
+                                        <div class="social-icons">
+                                            <i class="fab fa-instagram"></i> 
+                                        </div>
+                                    </a>
+                                    <a href="">
+                                        <div class="social-icons">
+                                            <i class="fab fa-twitter"></i> 
+                                        </div>
+                                    </a>
+                                    <a href="">
+                                        <div class="social-icons">
+                                            <i class="fab fa-youtube"></i> 
+                                        </div>
+                                    </a>
+                                </div>
+                            </div> 
+                            <!-- banner-info::end -->
+                        </div>
+                        <div class="banner-info-wrapper-childs">
+                            <div class="banner-featured-image">
+                                <img src="{% static 'images/featured.svg' %}" draggable="false">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<svg class="home-deco-bg" viewBox="0 0 2465 1085">
+    <path id="Path_2" data-name="Path 2" d="M-76-62H2389V1023s-215.294-564.309-689.426-545.226-483.808,193.555-885.368-119.95S-76,562.284-76,562.284Z" transform="translate(76 62)"/>
+</svg>          
+<!-- banner-section::end -->
+{% endblock content %}

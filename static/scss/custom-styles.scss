@@ -1,0 +1,883 @@
+// --------------------global veriables::begin-------------------------
+@import "webVariables";
+// -------------------------global veriables::end-------------------------
+
+// -------------------------global mixins::begin-------------------------
+@import "webMixins";
+// -------------------------global mixins::end-------------------------
+// -------------------------------------------------------------------------------
+// -------------------------web-presets::begin-------------------------
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, strong, mark, small, del, ins, sub, sup {
+    font-family: $global-primary-font;
+}
+
+p, a, ul, li, ol, span, strong, tr, th, td {
+    font-family: $global-primary-font;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    @include noMarginPadding;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+    width: 0.6rem;
+    background: rgb(219, 219, 219);
+}
+
+html::-webkit-scrollbar-track {
+    border-radius: 0.2rem;
+    background: transparent;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+html::-webkit-scrollbar-thumb {
+    border-radius: 0;
+    background: $global-primary-color;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+::selection {
+    color: $global-white-color;
+    background: $global-primary-color;
+}
+
+.displayAsNone {
+    display: none;
+}
+
+.global-btn-primary {
+    outline: none;
+    border: 0.15rem solid transparent;
+    cursor: pointer;
+    background-color: $global-primary-color;
+    color: white;
+    padding: 0.2rem 0.6rem;
+    @include globalSmFont;
+    &:hover {
+        background-color: transparent;
+        border: 0.15rem solid $global-primary-color;
+        color: $global-primary-color;
+    }
+}
+
+.global-btn-primary-with-a {
+    outline: none;
+    border: 0.15rem solid transparent;
+    cursor: pointer;
+    background-color: $global-primary-color;
+    color: white;
+    padding: 0.2rem 0.6rem;
+    @include globalSmFont;
+    &:hover {
+        background-color: transparent;
+        border: 0.15rem solid $global-primary-color;
+        color: $global-primary-color;
+    }
+}
+
+// messages::begin
+.global-message-success {
+    padding: 1rem 0.8rem;
+    background-color: #009407;
+    position: fixed;
+    top: 2rem;
+    right: 1rem;
+    border-radius: 0.2rem;
+    box-shadow: $global-shadow;
+    z-index: 100;
+    border-right: 0.4rem solid #00ca0a;
+    animation: fade-message-model 5s linear forwards;
+    @keyframes fade-message-model {
+        0% {
+            transform: translateY(2rem);
+            opacity: 1;
+        }
+        70% {
+            transform: translateY(0rem);
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+            transform: translateY(0rem);
+        }
+    }
+    h3 {
+        @include globalSmFont;
+        font-weight: $fw-500;
+        color: #ffffff;
+        i {
+            margin-right: 0.5rem;
+        }
+    }
+}
+
+.global-message-warning {
+    padding: 1rem 0.8rem;
+    background-color: #b83400;
+    position: fixed;
+    top: 2rem;
+    right: 1rem;
+    border-radius: 0.2rem;
+    box-shadow: $global-shadow;
+    z-index: 100;
+    border-right: 0.4rem solid #862600;
+    animation: fade-message-model 3s ease-in forwards;
+    @keyframes fade-message-model {
+        0% {
+            opacity: 1;
+        }
+        70% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+    h3 {
+        @include globalSmFont;
+        font-weight: $fw-500;
+        color: #ffffff;
+        i {
+            margin-right: 0.5rem;
+        }
+    }
+}
+
+.application-send-message-success {
+    .application-send-message-outter {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: #000000da;
+        z-index: 200;
+        @include flexPropertyCentered;
+        .application-send-message-inner {
+            padding: 1.4rem 1.4rem;
+            background-color: #ffffff;
+            border-radius: 0.3rem;
+            h3 {
+                @include globalLgFont;
+                i {
+                    color: #da2c00
+                }
+            }
+            h4 {
+                @include globalLgFont;
+                color: $global-dark-color;
+                margin: 0.3rem 0;
+            }
+            p {
+                @include globalSmFont;
+            }
+            h3, h4, p {
+                text-align: center;
+            }
+            .done-btn {
+                text-align: center;
+                margin-top: 0.5rem;
+                button {
+                    background-color: #da2c00;
+                    color: $global-white-color;
+                    padding: 0.1rem 1rem;
+                    border-radius: 2rem;
+                    outline: none;
+                    border: none;
+                    cursor: pointer;
+                    &:hover {
+                        background-color: $global-primary-color;
+                    }
+                }
+                a {
+                    background-color: #009407;
+                    color: $global-white-color;
+                    padding: 0.2rem 1rem;
+                    border-radius: 2rem;
+                    &:hover {
+                        background-color: $global-primary-color;
+                    }
+                }
+            }
+        }
+    }
+}
+// messages::end
+// -------------------------web-presets::end-------------------------
+.todo-list-master-section {
+    // to[-navigation::begin
+    .top-navigation-section {
+        box-shadow: $global-shadow;
+        background: $global-white-color;
+        padding: 1rem 0;
+        .top-nav-parent {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .top-nav-childs {
+                &:first-child {
+                    h3 {
+                        @include globalLgFont;
+                        color: $global-dark-color;
+                    }
+                }
+                &:last-child {
+                    ul {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        @include noMarginPadding;
+                        li {
+                            margin: 0rem 0.2rem;
+                            @include noListStyle;
+                            a {
+                                @include globalSmFont;
+                                font-weight: $fw-600;
+                                color: $global-dark-color;
+                                &:hover {
+                                    color: $global-primary-color;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // top-navigation::begin
+    .home-deco-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: auto;
+        width: auto;
+        z-index: -1;
+        opacity: 0.05;
+        fill: #000000;
+    }
+    // banner::begin
+    .banner-section {
+        padding: 0.8rem;
+        .banner-info-wrapper-parent {
+            display: flex;
+            justify-content: space-between;
+            .banner-info-wrapper-childs {
+                flex: 1;
+                &:first-child {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    .banner-info-wrapper {
+                        padding: 2rem;
+                        h3 {
+                            color: $global-dark-color;
+                            font-weight: $fw-700;
+                            font-size: 2.4rem;
+                        }
+                        p {
+                            font-size: 1.6rem;
+                            font-weight: $fw-500;
+                            color: $global-primary-color;
+                            padding: 0rem 0.4rem;
+                        }
+                        .more-info {
+                            font-weight: $fw-500;
+                            color: $global-dark-color;
+                            @include globalSmFont;
+                        }
+                        .get-started-btn {
+                            margin: 1rem 0;
+                        }
+                        .social-media-wrapper {
+                            display: flex;
+                            opacity: 0.8;
+                            margin-top: 1.4rem;
+                            a {
+                                .social-icons {
+                                    margin-right: 1rem;
+                                    height: 2rem;
+                                    width: 2rem;
+                                    border-radius: 0.2rem;
+                                    @include flexPropertyCentered;
+                                    background-color: $global-dark-color;
+                                    i {
+                                        color: $global-white-color;
+                                        @include globalSmFont;
+                                    }
+                                }
+                            }
+                        }
+                        .info-parent {
+                            display: flex;
+                            justify-content: flex-start;
+                            align-items: center;
+                            margin: 1rem 0;
+                            .info-childs {
+                                &:first-child {
+                                    p {
+                                        padding: 0rem 1rem;
+                                        border-radius: 1rem 0 0 1rem;
+                                        font-size: 2rem;
+                                        font-weight: $fw-500;
+                                        color: $global-white-color;
+                                        background-color: $global-primary-color;
+                                    }
+                                }
+                                &:last-child {
+                                    p {
+                                        font-size: 2rem;
+                                        font-weight: $fw-500;
+                                        color: $global-dark-color;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                &:last-child {
+                    position: relative;
+                    .banner-featured-image {
+                        display: flex;
+                        justify-content: flex-end;
+                        align-items: center;
+                        img {
+                            height: auto;
+                            width: 90%;
+                            filter: drop-shadow(5px 5px 5px #0000003a);
+                            animation: featured-image-aimation 1s linear forwards;
+                        }
+                        @keyframes  featured-image-aimation {
+                            from {
+                                transform: translateY(2rem);
+                                opacity: 0;
+                            }
+                            to {
+                                transform: translateY(0rem);
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        // video watch::begin
+        .video-watcher-wrapper {
+            video {
+                height: auto;
+                width: 100%;
+            }
+            .vid-info {
+                h1, p {
+                    color: $global-dark-color;
+                    @include noWhiteSpace;
+                }
+                h1 {
+                    @include globalMdFont;
+                }
+                p {
+                    @include globalSmFont;
+                    font-weight: $fw-500;
+                    span {
+                        @include globalESmFont;
+                    }
+                }
+            }
+        }
+        .video-side-playlist {
+            box-shadow: $global-shadow;
+            border: 1px solid #dadada;
+            padding: 0.8rem;
+            background: #f8f8f8;
+            h3 {
+                @include globalMdFont;
+                margin: 0.4rem 0 0.8rem 0;
+                color: $global-dark-color;
+                text-transform: uppercase;
+            }
+            ul {
+                @include noMarginPadding;
+                a {
+                    &:hover {
+                        li {
+                            background-color: #ffffff;
+                        }
+                    }
+                    &:first-child {
+                        li {
+                            margin-top: 0rem
+                        }
+                    }
+                    li {
+                        margin-top: 0.8rem;
+                        border-bottom: 0.12rem solid #e4e4e4
+                    }
+                }
+                li {
+                    @include noListStyle;
+                    .plalist-info-parent {
+                        display: flex;
+                        .playlist-childs{
+                            &:first-child {
+                                flex: 1;
+                                video {
+                                    height: auto;
+                                    width: 100%;
+                                }
+                            }
+                            &:last-child {
+                                padding: 0.8rem;
+                                flex: 1;
+                                overflow: hidden;
+                                h1, p {
+                                    color: $global-dark-color;
+                                    @include noWhiteSpace;
+                                }
+                                h1 {
+                                    @include globalSmFont;
+                                }
+                                p {
+                                    @include globalESmFont;
+                                    font-weight: $fw-500;
+                                    span {
+                                        @include globalESmFont;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .custom-pagination {
+                margin-top: 1rem;
+            }
+        }
+        // video watch::end
+        .search-page-wrapper {
+            background: #f8f8f8;
+            padding: 1rem;
+            width: 80%;
+            h1 {
+                color: pink;
+                @include globalMdFont;
+                margin-bottom: 1rem;
+            }
+            .container-fluid {
+                .search-category {
+                    background: #f8f8f8;
+                    padding: 1rem;
+                    box-shadow: $global-shadow;
+                    border: 1px solid rgb(214, 214, 214);
+                    h3 {
+                        @include globalMdFont;
+                        font-weight: $fw-600;
+                        text-transform: uppercase;
+                    }
+                    ul {
+                        padding: 1rem;
+                        a {
+                            &:hover {
+                                li {
+                                    h2 {
+                                        color: pink;
+                                    }
+                                }
+                            }
+                            li {
+                                @include noListStyle;
+                                border-bottom: 0.12rem solid #dfdfdf;
+                                margin: 1rem 0;
+                                padding-bottom: 0.4rem;
+                                h2 {
+                                    @include globalSmFont;
+                                    color: $global-dark-color
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .watch-all-list {
+            background: #f8f8f8;
+            padding: 1rem;
+            h3 {
+                @include globalMdFont;
+                color: rgb(85, 85, 85);
+            }
+            .card {
+                margin-top: 1rem;
+                .card-header {
+                    @include noMarginPadding;
+                    border: none;
+                    video {
+                        height: auto;
+                        width: 100%;
+                    }
+                }
+                .card-body {
+                    padding: 0.5rem;
+                    h1, p {
+                        color: $global-dark-color;
+                        @include noWhiteSpace;
+                    }
+                    h1 {
+                        @include globalSmFont;
+                    }
+                    p {
+                        @include globalESmFont;
+                        font-weight: $fw-500;
+                        span {
+                            @include globalESmFont;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // banner::end
+    // login::begin
+    .login-form-section {
+        @include sectionPaddingCustom(2rem 0rem 2rem 0rem);
+        height: 100vh;
+        width: 100%;
+        background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("../images/bg.jpg");
+        background-repeat: none;
+        background-position: center;
+        background-size: cover;
+        @include flexPropertyCentered;
+        .login-form-centered {
+            margin: 0rem 2rem;
+            .login-form-logo-wrapper {
+                @include flexPropertyCentered;
+                margin-bottom: 1rem;
+                h3 {
+                    color: $global-dark-color;
+                    @include globalXlFont;
+                }
+            }
+            .auth-form-copy-right {
+                p {
+                    text-align: center;
+                    color: $global-dark-color;
+                    opacity: 1;
+                    font-weight: $fw-600;
+                    margin-top: 0.5rem;
+                    @include globalESmFont;
+                }
+            }
+            .login-form-inner {
+                padding: 2rem 1rem 3rem 1rem;
+                background: rgb(255, 255, 255);
+                border-radius: 0.5rem;
+                position: relative;
+                box-shadow: $global-shadow;
+                h2 {
+                    @include globalMdFont;
+                    text-align: start;
+                    color: $global-primary-color;
+                    font-weight: $fw-600;
+                }
+                .section-divider {
+                    background-color: #0000000c;
+                    width: 100%;
+                    height: 0.14rem;
+                    margin: 0.4rem 0rem;
+                }
+                .signup-link {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    background: $global-primary-color;
+                    padding: 0.5rem;
+                    border-radius: 0 0 0 1rem;
+                    a {
+                        @include globalESmFont;
+                        color: $global-white-color;
+                    }
+                }
+                form {
+                    .form-group {
+                        margin-top: 0.6rem;
+                        label {
+                            color: $global-dark-color;
+                            font-weight: $fw-600;
+                            @include globalSmFont;
+                            i {
+                                margin-right: 0.5rem;
+                            }
+                        }
+                    }
+                    .login-submit-btn {
+                        margin-top: 0.5rem;
+                        button {
+                            width: 100%;
+                            background: $global-dark-color;
+                            color: $global-white-color;
+                            outline: none;
+                            border: none;
+                            padding: 0.5rem 0rem; 
+                            cursor: pointer;
+                            border-radius: 0.5rem;
+                            &:hover {
+                                background: $global-primary-color;
+                            }
+                        }
+                    }
+                    .back-to-home-btn {
+                        text-align: start;
+                        margin-top: 0.5rem;
+                        a {
+                            text-decoration: none;
+                            color: $global-dark-color;
+                            &:hover {
+                                color: $global-primary-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // login::end
+    // todo-list::begin
+    .todo-list-section {
+        padding: 1.6rem 0;
+        background-color: #f8f8f8;
+        .todo-list-outer-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .todo-list-inner-wrapper {
+                width: 70%;
+                .todo-list-workspace {
+                    h1 {
+                        color: $global-dark-color;
+                        @include globalLgFont;
+                        margin: 1rem 0;
+                        text-align: center;
+                    }
+                    .card {
+                        
+                        border: none;
+                        box-shadow: rgb(148, 153, 158) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+                        .card-header {
+                            background-image: url("../images/carbon_BG.png");
+                            background-color: #c83842;
+                            border-right: 2rem solid #a1232c;
+                            h3 {
+                                color: $global-white-color;
+                                @include globalLgFont;
+                            }
+                            p {
+                                color: $global-white-color;
+                                @include globalSmFont;
+                                font-weight: $fw-600;
+                                span {
+                                    @include globalLgFont;
+                                }
+                            }
+                        }
+                        .card-body {
+                            .list-divider {
+                                position: relative;
+                                margin: 1.6rem 0 1rem 0;
+                                .divider {
+                                    height: 0.14rem;
+                                    width: 100%;
+                                    background: #dfdede;
+                                    border-radius: 1rem;
+                                }
+                                .divider-heading {
+                                    position: absolute;
+                                    top: 50%;
+                                    left: 50%;
+                                    transform: translate(-50%, -50%);
+                                    background: $global-white-color;
+                                    padding: 0rem 1rem;
+                                    p {
+                                        font-weight: $fw-500;
+                                        @include globalSmFont;
+                                        color: #626262;
+                                    }
+                                }
+                            }
+                            form {
+                                .add-task-input {
+                                    display: flex;
+                                    .add-task-childs {
+                                        input {
+                                            padding: 0.3rem 0.6rem;
+                                            width: 100%;
+                                        }
+                                        &:first-child {
+                                            flex: 6;
+                                            input {
+                                                border-radius: 0;
+                                            }
+                                        }
+                                        &:last-child {
+                                            flex: 1;
+                                            button {
+                                                white-space: nowrap;
+                                                background: green;
+                                                outline: none;
+                                                border: none;
+                                                @include allHeightWidth;
+                                                padding: 0rem 1rem;
+                                                cursor: pointer;
+                                                color: $global-white-color;
+                                                &:hover {
+                                                    background: $global-primary-color;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .list-display-wrapper {
+                                ul {
+                                    @include noMarginPadding;
+                                    li {
+                                        @include noListStyle;
+                                        border-bottom: 0.15rem solid #e7e7e7;
+                                        padding: 1rem 1.6rem;
+                                        &:nth-child(2), 
+                                        &:nth-child(4),
+                                        &:nth-child(8),
+                                        &:nth-child(10),
+                                        &:nth-child(12),
+                                        &:nth-child(14) {
+                                            background: #f8f8f8;
+                                        }
+                                        &:hover {
+                                            .display-date {
+                                                display: block;
+                                            }
+                                            background-color: #e7e7e7
+                                        }
+                                        .display-list-parent {
+                                            display: flex;
+                                            justify-content: space-around;
+                                            align-items: center;
+                                            .display-list-childs {
+                                                &:first-child {
+                                                    flex: 1;
+                                                    display: none;
+                                                }
+                                                &:nth-child(2) {
+                                                    flex: 8;
+                                                    p {
+                                                        @include globalSmFont;
+                                                        font-weight: $fw-500;
+                                                        position: relative;
+                                                        &::before {
+                                                            @include usePseudoElement;
+                                                            left: -1rem;
+                                                            top: 35%;
+                                                            height: 0.5rem;
+                                                            width: 0.5rem;
+                                                            border-radius: 100%;
+                                                            background-color: $global-dark-color;
+                                                        }
+                                                    }
+                                                }
+                                                &:last-child {
+                                                    flex: 1;
+                                                    a {
+                                                        padding: 0rem 0.3rem;
+                                                        &:hover {
+                                                            color: $global-dark-color;
+                                                        }
+                                                    }
+                                                    .edit-btn {
+                                                        color: rgb(0, 143, 143);
+                                                    }
+                                                    .delete-btn {
+                                                        color: rgb(202, 24, 0);
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        .display-date {
+                                            display: none;
+                                            span {
+                                                @include globalESmFont;
+                                                color: $global-dark-color;
+                                                font-weight: $fw-500;
+                                            }
+                                        }
+                                        animation: list-animation 0.5s linear forwards;
+                                        @keyframes list-animation {
+                                            from  {
+                                                opacity: 0;
+                                                transform: translateX(1rem);
+                                            }
+                                            to {
+                                                opacity: 1;
+                                                transform: translateX(0rem);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // todo-list::end
+}
+// ---------------------------------------------------------
+// responsiveness::begin
+@media only screen and (max-width: 3000px) {
+    html {
+        font-size: 100%;
+    }
+    .container {
+        max-width: 1200px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    html {
+        font-size: 90%;
+    }
+    .todo-list-master-section .banner-section .banner-info-wrapper-parent {
+        flex-direction: column;
+    }
+    .todo-list-master-section .todo-list-section .todo-list-outer-wrapper .todo-list-inner-wrapper {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 612px) {
+    .todo-list-master-section .todo-list-section .todo-list-outer-wrapper .todo-list-inner-wrapper .todo-list-workspace .card .card-body form .add-task-input {
+        flex-direction: column;
+    }
+    .todo-list-master-section .todo-list-section .todo-list-outer-wrapper .todo-list-inner-wrapper .todo-list-workspace .card .card-body form .add-task-input .add-task-childs:last-child button {
+        padding: 0.5rem 1rem;
+    }
+}
+@media only screen and (max-width: 360px) {
+    .todo-list-master-section .top-navigation-section .top-nav-parent {
+        flex-direction: column;
+    }
+    .todo-list-master-section .banner-section .banner-info-wrapper-parent .banner-info-wrapper-childs:last-child .banner-featured-image img {
+        width: 100%;
+    }
+}

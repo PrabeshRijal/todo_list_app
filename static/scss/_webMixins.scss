@@ -1,0 +1,117 @@
+@mixin sectionPadding {
+    padding: 3rem 0rem 3rem 0rem;
+}
+
+@mixin allHeightWidth {
+    height: 100%;
+    width: 100%;
+}
+
+@mixin sectionPaddingCustom($val) {
+    padding: $val;
+}
+
+@mixin noMarginPadding {
+    margin: 0;
+    padding: 0;
+}
+
+@mixin noListStyle {
+    list-style-type: none;
+}
+
+@mixin noWhiteSpace {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+@mixin objFitProperty($position) {
+    object-fit: cover;
+    object-position: $position;
+}
+
+@mixin lineHeight($height, $line-height) {
+    height: $height;
+    line-height: $line-height;
+}
+
+@mixin flexPropertyCentered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flexPropertyCenteredPara($position) {
+    display: flex;
+    justify-content: $position;
+    align-items: center;
+}
+
+@mixin gridPropertyCentered {
+    display: grid;
+    place-items: center;
+}
+
+@mixin absoluteCentered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin usePseudoElement {
+    content: "";
+    position: absolute;
+}
+
+@mixin countColumn($count) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $count;
+    -webkit-box-orient: vertical;
+}
+
+@mixin inputFocus {
+    &:focus {
+        box-shadow: 0 0 0.6rem 0 #0095415d !important;
+        border: 0.1rem solid pink;
+    }
+    &::placeholder {
+        color: green;
+        @include globalESmFont;
+    }
+}
+
+@mixin globalEESmFont {
+    font-size: 0.8rem;
+}
+
+@mixin globalESmFont {
+    font-size: 0.9rem;
+}
+
+@mixin globalSmFont {
+    font-size: 1rem;
+}
+
+@mixin globalMdFont {
+    font-size: 1.2rem;
+}
+
+@mixin globalLgFont {
+    font-size: 1.4rem;
+}
+
+@mixin globalXlFont {
+    font-size: 1.6rem;
+}
+
+@mixin globalXXlFont {
+    font-size: 1.8rem;
+}
+
+@mixin globalXXXlFont {
+    font-size: 2rem;
+}

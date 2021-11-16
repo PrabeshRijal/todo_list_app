@@ -1,0 +1,57 @@
+{% extends "layout/webBase.html" %}
+{% load static %}
+{% block title %}Login{% endblock title %}
+{% block content %}
+{% if messages %}
+    {% for message in messages %}
+        <div class="global-message-{{message.tags}} global-message-fade-timer">
+            <h3><i class="fa fa-times-circle"></i> {{ message }}</h3>
+        </div>
+    {% endfor %}
+{% endif %}
+<!-- login-form-section::begin -->
+<section class="login-form-section">
+    <div class="login-form-centered">
+        <div class="login-form-inner">
+            <h2>Account Login</h2>
+            <div class="section-divider"></div>
+            <form action="/login" method="POST" autocomplete="off">
+                {% csrf_token %}
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-xl-12 col-lg-12">
+                            <div class="form-group">
+                                <label for=""><i class="fa fa-envelope"></i>Enter Email / Username</label>
+                                <input type="email" name="username" class="form-control" placeholder="Enter Your Email Address / Username" required>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-xl-12 col-lg-12">
+                            <div class="form-group">
+                                <label for=""><i class="fa fa-key"></i>Password</label>
+                                <input type="password" name="password" class="form-control himalayan-input" placeholder="Enter Your Password" required>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-xl-12 col-lg-12">
+                            <div class="login-submit-btn">
+                                <button type="submit">Login</button>
+                            </div> 
+                            <div class="back-to-home-btn">
+                                <a href="/"><i class="fa fa-angle-left"></i> Back To Home</a>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="signup-link">
+                <a href="/register">Don't Have Account <i class="fa fa-angle-double-right"></i></a>
+            </div>
+        </div>
+        <!-- login-copy-right::begin -->
+        <div class="auth-form-copy-right">
+            <p>Copyright © 2021 Prabesh Rijal. All Rights Reserved.</p>
+        </div>
+        <!-- login-copy-right::end -->
+    </div>
+</section>
+<!-- login-form-section::end -->
+{% endblock content %}

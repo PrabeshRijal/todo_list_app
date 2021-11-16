@@ -1,0 +1,56 @@
+{% extends "layout/webBase.html" %}
+{% load static %}
+{% block title %}Register{% endblock title %}
+{% block content %}
+<!-- login-form-section::begin -->
+ <section class="login-form-section">
+    <div class="login-form-centered">
+        <div class="login-form-inner">
+            <h2>Rrgister</h2>
+            <div class="section-divider"></div>
+            <form action="/register" method="POST" autocomplete="off">
+                {% csrf_token %}
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-xl-12 col-lg-12">
+                            <div class="form-group">
+                                <label for=""><i class="fa fa-envelope"></i> {{form.username.label}} <span class="text-danger">{{ form.errors.username|striptags }}</span></label>
+                                {{form.username}}
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-xl-12 col-lg-12">
+                            <div class="form-group">
+                                <label for=""><i class="fa fa-lock"></i> {{form.password1.label}} <span class="text-danger">{{ form.errors.password1|striptags }}</span></label>
+                                {{form.password1}}
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-xl-12 col-lg-12">
+                            <div class="form-group">
+                                <label for=""><i class="fa fa-key"></i> {{form.password2.label}} <span class="text-danger">{{ form.errors.password2|striptags }}</span></label>
+                                {{form.password2}}
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-xl-12 col-lg-12">
+                            <div class="login-submit-btn">
+                                <button type="submit">Register</button>
+                            </div> 
+                            <div class="back-to-home-btn">
+                                <a href="/"><i class="fa fa-angle-left"></i> Back To Home</a>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="signup-link">
+                <a href="/login">Already Have Account <i class="fa fa-angle-double-right"></i></a>
+            </div>
+        </div>
+        <!-- login-copy-right::begin -->
+        <div class="auth-form-copy-right">
+            <p>Copyright © 2021 Prabesh Rijal. All Rights Reserved.</p>
+        </div>
+        <!-- login-copy-right::end -->
+    </div>
+</section>
+<!-- login-form-section::end -->
+{% endblock content %}

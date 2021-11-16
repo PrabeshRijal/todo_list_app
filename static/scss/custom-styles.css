@@ -1,0 +1,1138 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, strong, mark, small, del, ins, sub, sup {
+  font-family: "Roboto", sans-serif;
+}
+
+p, a, ul, li, ol, span, strong, tr, th, td {
+  font-family: "Roboto", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+  width: 0.6rem;
+  background: #dbdbdb;
+}
+
+html::-webkit-scrollbar-track {
+  border-radius: 0.2rem;
+  background: transparent;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+          box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+html::-webkit-scrollbar-thumb {
+  border-radius: 0;
+  background: #e8505b;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+          box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+::-moz-selection {
+  color: #ffffff;
+  background: #e8505b;
+}
+
+::selection {
+  color: #ffffff;
+  background: #e8505b;
+}
+
+.displayAsNone {
+  display: none;
+}
+
+.global-btn-primary {
+  outline: none;
+  border: 0.15rem solid transparent;
+  cursor: pointer;
+  background-color: #e8505b;
+  color: white;
+  padding: 0.2rem 0.6rem;
+  font-size: 1rem;
+}
+
+.global-btn-primary:hover {
+  background-color: transparent;
+  border: 0.15rem solid #e8505b;
+  color: #e8505b;
+}
+
+.global-btn-primary-with-a {
+  outline: none;
+  border: 0.15rem solid transparent;
+  cursor: pointer;
+  background-color: #e8505b;
+  color: white;
+  padding: 0.2rem 0.6rem;
+  font-size: 1rem;
+}
+
+.global-btn-primary-with-a:hover {
+  background-color: transparent;
+  border: 0.15rem solid #e8505b;
+  color: #e8505b;
+}
+
+.global-message-success {
+  padding: 1rem 0.8rem;
+  background-color: #009407;
+  position: fixed;
+  top: 2rem;
+  right: 1rem;
+  border-radius: 0.2rem;
+  -webkit-box-shadow: 0rem 0.1rem 0.4rem 0rem #94949460;
+          box-shadow: 0rem 0.1rem 0.4rem 0rem #94949460;
+  z-index: 100;
+  border-right: 0.4rem solid #00ca0a;
+  -webkit-animation: fade-message-model 5s linear forwards;
+          animation: fade-message-model 5s linear forwards;
+}
+
+@-webkit-keyframes fade-message-model {
+  0% {
+    -webkit-transform: translateY(2rem);
+            transform: translateY(2rem);
+    opacity: 1;
+  }
+  70% {
+    -webkit-transform: translateY(0rem);
+            transform: translateY(0rem);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(0rem);
+            transform: translateY(0rem);
+  }
+}
+
+@keyframes fade-message-model {
+  0% {
+    -webkit-transform: translateY(2rem);
+            transform: translateY(2rem);
+    opacity: 1;
+  }
+  70% {
+    -webkit-transform: translateY(0rem);
+            transform: translateY(0rem);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(0rem);
+            transform: translateY(0rem);
+  }
+}
+
+.global-message-success h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.global-message-success h3 i {
+  margin-right: 0.5rem;
+}
+
+.global-message-warning {
+  padding: 1rem 0.8rem;
+  background-color: #b83400;
+  position: fixed;
+  top: 2rem;
+  right: 1rem;
+  border-radius: 0.2rem;
+  -webkit-box-shadow: 0rem 0.1rem 0.4rem 0rem #94949460;
+          box-shadow: 0rem 0.1rem 0.4rem 0rem #94949460;
+  z-index: 100;
+  border-right: 0.4rem solid #862600;
+  -webkit-animation: fade-message-model 3s ease-in forwards;
+          animation: fade-message-model 3s ease-in forwards;
+}
+
+@keyframes fade-message-model {
+  0% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.global-message-warning h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.global-message-warning h3 i {
+  margin-right: 0.5rem;
+}
+
+.application-send-message-success .application-send-message-outter {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #000000da;
+  z-index: 200;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.application-send-message-success .application-send-message-outter .application-send-message-inner {
+  padding: 1.4rem 1.4rem;
+  background-color: #ffffff;
+  border-radius: 0.3rem;
+}
+
+.application-send-message-success .application-send-message-outter .application-send-message-inner h3 {
+  font-size: 1.4rem;
+}
+
+.application-send-message-success .application-send-message-outter .application-send-message-inner h3 i {
+  color: #da2c00;
+}
+
+.application-send-message-success .application-send-message-outter .application-send-message-inner h4 {
+  font-size: 1.4rem;
+  color: #263238;
+  margin: 0.3rem 0;
+}
+
+.application-send-message-success .application-send-message-outter .application-send-message-inner p {
+  font-size: 1rem;
+}
+
+.application-send-message-success .application-send-message-outter .application-send-message-inner h3, .application-send-message-success .application-send-message-outter .application-send-message-inner h4, .application-send-message-success .application-send-message-outter .application-send-message-inner p {
+  text-align: center;
+}
+
+.application-send-message-success .application-send-message-outter .application-send-message-inner .done-btn {
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.application-send-message-success .application-send-message-outter .application-send-message-inner .done-btn button {
+  background-color: #da2c00;
+  color: #ffffff;
+  padding: 0.1rem 1rem;
+  border-radius: 2rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.application-send-message-success .application-send-message-outter .application-send-message-inner .done-btn button:hover {
+  background-color: #e8505b;
+}
+
+.application-send-message-success .application-send-message-outter .application-send-message-inner .done-btn a {
+  background-color: #009407;
+  color: #ffffff;
+  padding: 0.2rem 1rem;
+  border-radius: 2rem;
+}
+
+.application-send-message-success .application-send-message-outter .application-send-message-inner .done-btn a:hover {
+  background-color: #e8505b;
+}
+
+.todo-list-master-section .top-navigation-section {
+  -webkit-box-shadow: 0rem 0.1rem 0.4rem 0rem #94949460;
+          box-shadow: 0rem 0.1rem 0.4rem 0rem #94949460;
+  background: #ffffff;
+  padding: 1rem 0;
+}
+
+.todo-list-master-section .top-navigation-section .top-nav-parent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.todo-list-master-section .top-navigation-section .top-nav-parent .top-nav-childs:first-child h3 {
+  font-size: 1.4rem;
+  color: #263238;
+}
+
+.todo-list-master-section .top-navigation-section .top-nav-parent .top-nav-childs:last-child ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.todo-list-master-section .top-navigation-section .top-nav-parent .top-nav-childs:last-child ul li {
+  margin: 0rem 0.2rem;
+  list-style-type: none;
+}
+
+.todo-list-master-section .top-navigation-section .top-nav-parent .top-nav-childs:last-child ul li a {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #263238;
+}
+
+.todo-list-master-section .top-navigation-section .top-nav-parent .top-nav-childs:last-child ul li a:hover {
+  color: #e8505b;
+}
+
+.todo-list-master-section .home-deco-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: auto;
+  width: auto;
+  z-index: -1;
+  opacity: 0.05;
+  fill: #000000;
+}
+
+.todo-list-master-section .banner-section {
+  padding: 0.8rem;
+}
+
+.todo-list-master-section .banner-section .banner-info-wrapper-parent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.todo-list-master-section .banner-section .banner-info-wrapper-parent .banner-info-wrapper-childs {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.todo-list-master-section .banner-section .banner-info-wrapper-parent .banner-info-wrapper-childs:first-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.todo-list-master-section .banner-section .banner-info-wrapper-parent .banner-info-wrapper-childs:first-child .banner-info-wrapper {
+  padding: 2rem;
+}
+
+.todo-list-master-section .banner-section .banner-info-wrapper-parent .banner-info-wrapper-childs:first-child .banner-info-wrapper h3 {
+  color: #263238;
+  font-weight: 700;
+  font-size: 2.4rem;
+}
+
+.todo-list-master-section .banner-section .banner-info-wrapper-parent .banner-info-wrapper-childs:first-child .banner-info-wrapper p {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #e8505b;
+  padding: 0rem 0.4rem;
+}
+
+.todo-list-master-section .banner-section .banner-info-wrapper-parent .banner-info-wrapper-childs:first-child .banner-info-wrapper .more-info {
+  font-weight: 500;
+  color: #263238;
+  font-size: 1rem;
+}
+
+.todo-list-master-section .banner-section .banner-info-wrapper-parent .banner-info-wrapper-childs:first-child .banner-info-wrapper .get-started-btn {
+  margin: 1rem 0;
+}
+
+.todo-list-master-section .banner-section .banner-info-wrapper-parent .banner-info-wrapper-childs:first-child .banner-info-wrapper .social-media-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  opacity: 0.8;
+  margin-top: 1.4rem;
+}
+
+.todo-list-master-section .banner-section .banner-info-wrapper-parent .banner-info-wrapper-childs:first-child .banner-info-wrapper .social-media-wrapper a .social-icons {
+  margin-right: 1rem;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 0.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #263238;
+}
+
+.todo-list-master-section .banner-section .banner-info-wrapper-parent .banner-info-wrapper-childs:first-child .banner-info-wrapper .social-media-wrapper a .social-icons i {
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+.todo-list-master-section .banner-section .banner-info-wrapper-parent .banner-info-wrapper-childs:first-child .banner-info-wrapper .info-parent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 1rem 0;
+}
+
+.todo-list-master-section .banner-section .banner-info-wrapper-parent .banner-info-wrapper-childs:first-child .banner-info-wrapper .info-parent .info-childs:first-child p {
+  padding: 0rem 1rem;
+  border-radius: 1rem 0 0 1rem;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: #e8505b;
+}
+
+.todo-list-master-section .banner-section .banner-info-wrapper-parent .banner-info-wrapper-childs:first-child .banner-info-wrapper .info-parent .info-childs:last-child p {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #263238;
+}
+
+.todo-list-master-section .banner-section .banner-info-wrapper-parent .banner-info-wrapper-childs:last-child {
+  position: relative;
+}
+
+.todo-list-master-section .banner-section .banner-info-wrapper-parent .banner-info-wrapper-childs:last-child .banner-featured-image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.todo-list-master-section .banner-section .banner-info-wrapper-parent .banner-info-wrapper-childs:last-child .banner-featured-image img {
+  height: auto;
+  width: 90%;
+  -webkit-filter: drop-shadow(5px 5px 5px #0000003a);
+          filter: drop-shadow(5px 5px 5px #0000003a);
+  -webkit-animation: featured-image-aimation 1s linear forwards;
+          animation: featured-image-aimation 1s linear forwards;
+}
+
+@-webkit-keyframes featured-image-aimation {
+  from {
+    -webkit-transform: translateY(2rem);
+            transform: translateY(2rem);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0rem);
+            transform: translateY(0rem);
+    opacity: 1;
+  }
+}
+
+@keyframes featured-image-aimation {
+  from {
+    -webkit-transform: translateY(2rem);
+            transform: translateY(2rem);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0rem);
+            transform: translateY(0rem);
+    opacity: 1;
+  }
+}
+
+.todo-list-master-section .banner-section .video-watcher-wrapper video {
+  height: auto;
+  width: 100%;
+}
+
+.todo-list-master-section .banner-section .video-watcher-wrapper .vid-info h1, .todo-list-master-section .banner-section .video-watcher-wrapper .vid-info p {
+  color: #263238;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.todo-list-master-section .banner-section .video-watcher-wrapper .vid-info h1 {
+  font-size: 1.2rem;
+}
+
+.todo-list-master-section .banner-section .video-watcher-wrapper .vid-info p {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.todo-list-master-section .banner-section .video-watcher-wrapper .vid-info p span {
+  font-size: 0.9rem;
+}
+
+.todo-list-master-section .banner-section .video-side-playlist {
+  -webkit-box-shadow: 0rem 0.1rem 0.4rem 0rem #94949460;
+          box-shadow: 0rem 0.1rem 0.4rem 0rem #94949460;
+  border: 1px solid #dadada;
+  padding: 0.8rem;
+  background: #f8f8f8;
+}
+
+.todo-list-master-section .banner-section .video-side-playlist h3 {
+  font-size: 1.2rem;
+  margin: 0.4rem 0 0.8rem 0;
+  color: #263238;
+  text-transform: uppercase;
+}
+
+.todo-list-master-section .banner-section .video-side-playlist ul {
+  margin: 0;
+  padding: 0;
+}
+
+.todo-list-master-section .banner-section .video-side-playlist ul a:hover li {
+  background-color: #ffffff;
+}
+
+.todo-list-master-section .banner-section .video-side-playlist ul a:first-child li {
+  margin-top: 0rem;
+}
+
+.todo-list-master-section .banner-section .video-side-playlist ul a li {
+  margin-top: 0.8rem;
+  border-bottom: 0.12rem solid #e4e4e4;
+}
+
+.todo-list-master-section .banner-section .video-side-playlist ul li {
+  list-style-type: none;
+}
+
+.todo-list-master-section .banner-section .video-side-playlist ul li .plalist-info-parent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.todo-list-master-section .banner-section .video-side-playlist ul li .plalist-info-parent .playlist-childs:first-child {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.todo-list-master-section .banner-section .video-side-playlist ul li .plalist-info-parent .playlist-childs:first-child video {
+  height: auto;
+  width: 100%;
+}
+
+.todo-list-master-section .banner-section .video-side-playlist ul li .plalist-info-parent .playlist-childs:last-child {
+  padding: 0.8rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  overflow: hidden;
+}
+
+.todo-list-master-section .banner-section .video-side-playlist ul li .plalist-info-parent .playlist-childs:last-child h1, .todo-list-master-section .banner-section .video-side-playlist ul li .plalist-info-parent .playlist-childs:last-child p {
+  color: #263238;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.todo-list-master-section .banner-section .video-side-playlist ul li .plalist-info-parent .playlist-childs:last-child h1 {
+  font-size: 1rem;
+}
+
+.todo-list-master-section .banner-section .video-side-playlist ul li .plalist-info-parent .playlist-childs:last-child p {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.todo-list-master-section .banner-section .video-side-playlist ul li .plalist-info-parent .playlist-childs:last-child p span {
+  font-size: 0.9rem;
+}
+
+.todo-list-master-section .banner-section .video-side-playlist .custom-pagination {
+  margin-top: 1rem;
+}
+
+.todo-list-master-section .banner-section .search-page-wrapper {
+  background: #f8f8f8;
+  padding: 1rem;
+  width: 80%;
+}
+
+.todo-list-master-section .banner-section .search-page-wrapper h1 {
+  color: pink;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.todo-list-master-section .banner-section .search-page-wrapper .container-fluid .search-category {
+  background: #f8f8f8;
+  padding: 1rem;
+  -webkit-box-shadow: 0rem 0.1rem 0.4rem 0rem #94949460;
+          box-shadow: 0rem 0.1rem 0.4rem 0rem #94949460;
+  border: 1px solid #d6d6d6;
+}
+
+.todo-list-master-section .banner-section .search-page-wrapper .container-fluid .search-category h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.todo-list-master-section .banner-section .search-page-wrapper .container-fluid .search-category ul {
+  padding: 1rem;
+}
+
+.todo-list-master-section .banner-section .search-page-wrapper .container-fluid .search-category ul a:hover li h2 {
+  color: pink;
+}
+
+.todo-list-master-section .banner-section .search-page-wrapper .container-fluid .search-category ul a li {
+  list-style-type: none;
+  border-bottom: 0.12rem solid #dfdfdf;
+  margin: 1rem 0;
+  padding-bottom: 0.4rem;
+}
+
+.todo-list-master-section .banner-section .search-page-wrapper .container-fluid .search-category ul a li h2 {
+  font-size: 1rem;
+  color: #263238;
+}
+
+.todo-list-master-section .banner-section .watch-all-list {
+  background: #f8f8f8;
+  padding: 1rem;
+}
+
+.todo-list-master-section .banner-section .watch-all-list h3 {
+  font-size: 1.2rem;
+  color: #555555;
+}
+
+.todo-list-master-section .banner-section .watch-all-list .card {
+  margin-top: 1rem;
+}
+
+.todo-list-master-section .banner-section .watch-all-list .card .card-header {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.todo-list-master-section .banner-section .watch-all-list .card .card-header video {
+  height: auto;
+  width: 100%;
+}
+
+.todo-list-master-section .banner-section .watch-all-list .card .card-body {
+  padding: 0.5rem;
+}
+
+.todo-list-master-section .banner-section .watch-all-list .card .card-body h1, .todo-list-master-section .banner-section .watch-all-list .card .card-body p {
+  color: #263238;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.todo-list-master-section .banner-section .watch-all-list .card .card-body h1 {
+  font-size: 1rem;
+}
+
+.todo-list-master-section .banner-section .watch-all-list .card .card-body p {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.todo-list-master-section .banner-section .watch-all-list .card .card-body p span {
+  font-size: 0.9rem;
+}
+
+.todo-list-master-section .login-form-section {
+  padding: 2rem 0rem 2rem 0rem;
+  height: 100vh;
+  width: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.8)), to(rgba(255, 255, 255, 0.8))), url("../images/bg.jpg");
+  background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("../images/bg.jpg");
+  background-repeat: none;
+  background-position: center;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.todo-list-master-section .login-form-section .login-form-centered {
+  margin: 0rem 2rem;
+}
+
+.todo-list-master-section .login-form-section .login-form-centered .login-form-logo-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 1rem;
+}
+
+.todo-list-master-section .login-form-section .login-form-centered .login-form-logo-wrapper h3 {
+  color: #263238;
+  font-size: 1.6rem;
+}
+
+.todo-list-master-section .login-form-section .login-form-centered .auth-form-copy-right p {
+  text-align: center;
+  color: #263238;
+  opacity: 1;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.todo-list-master-section .login-form-section .login-form-centered .login-form-inner {
+  padding: 2rem 1rem 3rem 1rem;
+  background: white;
+  border-radius: 0.5rem;
+  position: relative;
+  -webkit-box-shadow: 0rem 0.1rem 0.4rem 0rem #94949460;
+          box-shadow: 0rem 0.1rem 0.4rem 0rem #94949460;
+}
+
+.todo-list-master-section .login-form-section .login-form-centered .login-form-inner h2 {
+  font-size: 1.2rem;
+  text-align: start;
+  color: #e8505b;
+  font-weight: 600;
+}
+
+.todo-list-master-section .login-form-section .login-form-centered .login-form-inner .section-divider {
+  background-color: #0000000c;
+  width: 100%;
+  height: 0.14rem;
+  margin: 0.4rem 0rem;
+}
+
+.todo-list-master-section .login-form-section .login-form-centered .login-form-inner .signup-link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #e8505b;
+  padding: 0.5rem;
+  border-radius: 0 0 0 1rem;
+}
+
+.todo-list-master-section .login-form-section .login-form-centered .login-form-inner .signup-link a {
+  font-size: 0.9rem;
+  color: #ffffff;
+}
+
+.todo-list-master-section .login-form-section .login-form-centered .login-form-inner form .form-group {
+  margin-top: 0.6rem;
+}
+
+.todo-list-master-section .login-form-section .login-form-centered .login-form-inner form .form-group label {
+  color: #263238;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.todo-list-master-section .login-form-section .login-form-centered .login-form-inner form .form-group label i {
+  margin-right: 0.5rem;
+}
+
+.todo-list-master-section .login-form-section .login-form-centered .login-form-inner form .login-submit-btn {
+  margin-top: 0.5rem;
+}
+
+.todo-list-master-section .login-form-section .login-form-centered .login-form-inner form .login-submit-btn button {
+  width: 100%;
+  background: #263238;
+  color: #ffffff;
+  outline: none;
+  border: none;
+  padding: 0.5rem 0rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+}
+
+.todo-list-master-section .login-form-section .login-form-centered .login-form-inner form .login-submit-btn button:hover {
+  background: #e8505b;
+}
+
+.todo-list-master-section .login-form-section .login-form-centered .login-form-inner form .back-to-home-btn {
+  text-align: start;
+  margin-top: 0.5rem;
+}
+
+.todo-list-master-section .login-form-section .login-form-centered .login-form-inner form .back-to-home-btn a {
+  text-decoration: none;
+  color: #263238;
+}
+
+.todo-list-master-section .login-form-section .login-form-centered .login-form-inner form .back-to-home-btn a:hover {
+  color: #e8505b;
+}
+
+.todo-list-master-section .todo-list-section {
+  padding: 1.6rem 0;
+  background-color: #f8f8f8;
+}
+
+.todo-list-master-section .todo-list-section .todo-list-outer-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.todo-list-master-section .todo-list-section .todo-list-outer-wrapper .todo-list-inner-wrapper {
+  width: 70%;
+}
+
+.todo-list-master-section .todo-list-section .todo-list-outer-wrapper .todo-list-inner-wrapper .todo-list-workspace h1 {
+  color: #263238;
+  font-size: 1.4rem;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.todo-list-master-section .todo-list-section .todo-list-outer-wrapper .todo-list-inner-wrapper .todo-list-workspace .card {
+  border: none;
+  -webkit-box-shadow: #94999e 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+          box-shadow: #94999e 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+
+.todo-list-master-section .todo-list-section .todo-list-outer-wrapper .todo-list-inner-wrapper .todo-list-workspace .card .card-header {
+  background-image: url("../images/carbon_BG.png");
+  background-color: #c83842;
+  border-right: 2rem solid #a1232c;
+}
+
+.todo-list-master-section .todo-list-section .todo-list-outer-wrapper .todo-list-inner-wrapper .todo-list-workspace .card .card-header h3 {
+  color: #ffffff;
+  font-size: 1.4rem;
+}
+
+.todo-list-master-section .todo-list-section .todo-list-outer-wrapper .todo-list-inner-wrapper .todo-list-workspace .card .card-header p {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.todo-list-master-section .todo-list-section .todo-list-outer-wrapper .todo-list-inner-wrapper .todo-list-workspace .card .card-header p span {
+  font-size: 1.4rem;
+}
+
+.todo-list-master-section .todo-list-section .todo-list-outer-wrapper .todo-list-inner-wrapper .todo-list-workspace .card .card-body .list-divider {
+  position: relative;
+  margin: 1.6rem 0 1rem 0;
+}
+
+.todo-list-master-section .todo-list-section .todo-list-outer-wrapper .todo-list-inner-wrapper .todo-list-workspace .card .card-body .list-divider .divider {
+  height: 0.14rem;
+  width: 100%;
+  background: #dfdede;
+  border-radius: 1rem;
+}
+
+.todo-list-master-section .todo-list-section .todo-list-outer-wrapper .todo-list-inner-wrapper .todo-list-workspace .card .card-body .list-divider .divider-heading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: #ffffff;
+  padding: 0rem 1rem;
+}
+
+.todo-list-master-section .todo-list-section .todo-list-outer-wrapper .todo-list-inner-wrapper .todo-list-workspace .card .card-body .list-divider .divider-heading p {
+  font-weight: 500;
+  font-size: 1rem;
+  color: #626262;
+}
+
+.todo-list-master-section .todo-list-section .todo-list-outer-wrapper .todo-list-inner-wrapper .todo-list-workspace .card .card-body form .add-task-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.todo-list-master-section .todo-list-section .todo-list-outer-wrapper .todo-list-inner-wrapper .todo-list-workspace .card .card-body form .add-task-input .add-task-childs input {
+  padding: 0.3rem 0.6rem;
+  width: 100%;
+}
+
+.todo-list-master-section .todo-list-section .todo-list-outer-wrapper .todo-list-inner-wrapper .todo-list-workspace .card .card-body form .add-task-input .add-task-childs:first-child {
+  -webkit-box-flex: 6;
+      -ms-flex: 6;
+          flex: 6;
+}
+
+.todo-list-master-section .todo-list-section .todo-list-outer-wrapper .todo-list-inner-wrapper .todo-list-workspace .card .card-body form .add-task-input .add-task-childs:first-child input {
+  border-radius: 0;
+}
+
+.todo-list-master-section .todo-list-section .todo-list-outer-wrapper .todo-list-inner-wrapper .todo-list-workspace .card .card-body form .add-task-input .add-task-childs:last-child {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.todo-list-master-section .todo-list-section .todo-list-outer-wrapper .todo-list-inner-wrapper .todo-list-workspace .card .card-body form .add-task-input .add-task-childs:last-child button {
+  white-space: nowrap;
+  background: green;
+  outline: none;
+  border: none;
+  height: 100%;
+  width: 100%;
+  padding: 0rem 1rem;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.todo-list-master-section .todo-list-section .todo-list-outer-wrapper .todo-list-inner-wrapper .todo-list-workspace .card .card-body form .add-task-input .add-task-childs:last-child button:hover {
+  background: #e8505b;
+}
+
+.todo-list-master-section .todo-list-section .todo-list-outer-wrapper .todo-list-inner-wrapper .todo-list-workspace .card .card-body .list-display-wrapper ul {
+  margin: 0;
+  padding: 0;
+}
+
+.todo-list-master-section .todo-list-section .todo-list-outer-wrapper .todo-list-inner-wrapper .todo-list-workspace .card .card-body .list-display-wrapper ul li {
+  list-style-type: none;
+  border-bottom: 0.15rem solid #e7e7e7;
+  padding: 1rem 1.6rem;
+  -webkit-animation: list-animation 0.5s linear forwards;
+          animation: list-animation 0.5s linear forwards;
+}
+
+.todo-list-master-section .todo-list-section .todo-list-outer-wrapper .todo-list-inner-wrapper .todo-list-workspace .card .card-body .list-display-wrapper ul li:nth-child(2), .todo-list-master-section .todo-list-section .todo-list-outer-wrapper .todo-list-inner-wrapper .todo-list-workspace .card .card-body .list-display-wrapper ul li:nth-child(4), .todo-list-master-section .todo-list-section .todo-list-outer-wrapper .todo-list-inner-wrapper .todo-list-workspace .card .card-body .list-display-wrapper ul li:nth-child(8), .todo-list-master-section .todo-list-section .todo-list-outer-wrapper .todo-list-inner-wrapper .todo-list-workspace .card .card-body .list-display-wrapper ul li:nth-child(10), .todo-list-master-section .todo-list-section .todo-list-outer-wrapper .todo-list-inner-wrapper .todo-list-workspace .card .card-body .list-display-wrapper ul li:nth-child(12), .todo-list-master-section .todo-list-section .todo-list-outer-wrapper .todo-list-inner-wrapper .todo-list-workspace .card .card-body .list-display-wrapper ul li:nth-child(14) {
+  background: #f8f8f8;
+}
+
+.todo-list-master-section .todo-list-section .todo-list-outer-wrapper .todo-list-inner-wrapper .todo-list-workspace .card .card-body .list-display-wrapper ul li:hover {
+  background-color: #e7e7e7;
+}
+
+.todo-list-master-section .todo-list-section .todo-list-outer-wrapper .todo-list-inner-wrapper .todo-list-workspace .card .card-body .list-display-wrapper ul li:hover .display-date {
+  display: block;
+}
+
+.todo-list-master-section .todo-list-section .todo-list-outer-wrapper .todo-list-inner-wrapper .todo-list-workspace .card .card-body .list-display-wrapper ul li .display-list-parent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.todo-list-master-section .todo-list-section .todo-list-outer-wrapper .todo-list-inner-wrapper .todo-list-workspace .card .card-body .list-display-wrapper ul li .display-list-parent .display-list-childs:first-child {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: none;
+}
+
+.todo-list-master-section .todo-list-section .todo-list-outer-wrapper .todo-list-inner-wrapper .todo-list-workspace .card .card-body .list-display-wrapper ul li .display-list-parent .display-list-childs:nth-child(2) {
+  -webkit-box-flex: 8;
+      -ms-flex: 8;
+          flex: 8;
+}
+
+.todo-list-master-section .todo-list-section .todo-list-outer-wrapper .todo-list-inner-wrapper .todo-list-workspace .card .card-body .list-display-wrapper ul li .display-list-parent .display-list-childs:nth-child(2) p {
+  font-size: 1rem;
+  font-weight: 500;
+  position: relative;
+}
+
+.todo-list-master-section .todo-list-section .todo-list-outer-wrapper .todo-list-inner-wrapper .todo-list-workspace .card .card-body .list-display-wrapper ul li .display-list-parent .display-list-childs:nth-child(2) p::before {
+  content: "";
+  position: absolute;
+  left: -1rem;
+  top: 35%;
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 100%;
+  background-color: #263238;
+}
+
+.todo-list-master-section .todo-list-section .todo-list-outer-wrapper .todo-list-inner-wrapper .todo-list-workspace .card .card-body .list-display-wrapper ul li .display-list-parent .display-list-childs:last-child {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.todo-list-master-section .todo-list-section .todo-list-outer-wrapper .todo-list-inner-wrapper .todo-list-workspace .card .card-body .list-display-wrapper ul li .display-list-parent .display-list-childs:last-child a {
+  padding: 0rem 0.3rem;
+}
+
+.todo-list-master-section .todo-list-section .todo-list-outer-wrapper .todo-list-inner-wrapper .todo-list-workspace .card .card-body .list-display-wrapper ul li .display-list-parent .display-list-childs:last-child a:hover {
+  color: #263238;
+}
+
+.todo-list-master-section .todo-list-section .todo-list-outer-wrapper .todo-list-inner-wrapper .todo-list-workspace .card .card-body .list-display-wrapper ul li .display-list-parent .display-list-childs:last-child .edit-btn {
+  color: #008f8f;
+}
+
+.todo-list-master-section .todo-list-section .todo-list-outer-wrapper .todo-list-inner-wrapper .todo-list-workspace .card .card-body .list-display-wrapper ul li .display-list-parent .display-list-childs:last-child .delete-btn {
+  color: #ca1800;
+}
+
+.todo-list-master-section .todo-list-section .todo-list-outer-wrapper .todo-list-inner-wrapper .todo-list-workspace .card .card-body .list-display-wrapper ul li .display-date {
+  display: none;
+}
+
+.todo-list-master-section .todo-list-section .todo-list-outer-wrapper .todo-list-inner-wrapper .todo-list-workspace .card .card-body .list-display-wrapper ul li .display-date span {
+  font-size: 0.9rem;
+  color: #263238;
+  font-weight: 500;
+}
+
+@-webkit-keyframes list-animation {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(1rem);
+            transform: translateX(1rem);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0rem);
+            transform: translateX(0rem);
+  }
+}
+
+@keyframes list-animation {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(1rem);
+            transform: translateX(1rem);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0rem);
+            transform: translateX(0rem);
+  }
+}
+
+@media only screen and (max-width: 3000px) {
+  html {
+    font-size: 100%;
+  }
+  .container {
+    max-width: 1200px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  html {
+    font-size: 90%;
+  }
+  .todo-list-master-section .banner-section .banner-info-wrapper-parent {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .todo-list-master-section .todo-list-section .todo-list-outer-wrapper .todo-list-inner-wrapper {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 612px) {
+  .todo-list-master-section .todo-list-section .todo-list-outer-wrapper .todo-list-inner-wrapper .todo-list-workspace .card .card-body form .add-task-input {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .todo-list-master-section .todo-list-section .todo-list-outer-wrapper .todo-list-inner-wrapper .todo-list-workspace .card .card-body form .add-task-input .add-task-childs:last-child button {
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .todo-list-master-section .top-navigation-section .top-nav-parent {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .todo-list-master-section .banner-section .banner-info-wrapper-parent .banner-info-wrapper-childs:last-child .banner-featured-image img {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=custom-styles.css.map */

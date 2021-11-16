@@ -1,0 +1,21 @@
+{% extends "layout/webBase.html" %}
+{% load static %}
+{% block title %}Confirmation{% endblock title %}
+{% block content %}
+<div class="application-send-message-success">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="application-send-message-outter">
+            <div class="application-send-message-inner">
+                <h3><i class="fa fa-exclamation-triangle"></i></h3>
+                <h4>Are You Sure!!!...Did you completed this task??</h4>
+                <p>This task will be deleted permanently.</p>
+                <div class="done-btn">
+                    <button type="submit" value="yes">Yes, Delete It</button>
+                    <a class="ml-2" href="/todo_list">Cancle</a>
+                </div>
+            </div> 
+        </div>
+    </form>
+</div>
+{% endblock content %}

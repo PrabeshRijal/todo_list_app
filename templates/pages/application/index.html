@@ -1,0 +1,83 @@
+{% extends "layout/webBase.html" %}
+{% load static %}
+{% block title %}Todo List{% endblock title %}
+{% block content %}
+{% if messages %}
+    {% for message in messages %}
+        <div class="global-message-{{message.tags}} global-message-fade-timer">
+            <h3><i class="fa fa-times-circle"></i> {{ message }}</h3>
+        </div>
+    {% endfor %}
+{% endif %}
+<!-- todolist-section::begin -->
+<div class="todo-list-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xl-12 col-lg-12">
+                <div class="todo-list-outer-wrapper">
+                    <div class="todo-list-inner-wrapper">
+                        <div class="todo-list-workspace">
+                            <h1>Manage your work smartly</h3>
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3>Hello {{request.user.username}}</h3>
+                                    {% if count_task == 0 %}
+                                    <p><span>"No Task"</span> Make work list -</p>
+                                    {% else %}
+                                    <p>You have <span>"{{count_task}}"</span> task to complete -</p>
+                                    {% endif %}
+                                </div>
+                                <div class="card-body">
+                                    <form action="" method="POST" autocomplete="off">
+                                        {% csrf_token %}
+                                        <div class="add-task-input">
+                                            <div class="add-task-childs">
+                                                {{form.todoList}}
+                                                {{form.taskEnd}}
+                                            </div>
+                                            <div class="add-task-childs">
+                                                <button type="submit">Add <i class="fa fa-plus"></i></button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <div class="list-divider">
+                                        <div class="divider"></div>
+                                        <div class="divider-heading"><p>Todo List Are</p></div>
+                                    </div>
+                                    <div class="list-display-wrapper">
+                                        <ul>
+                                            {% for list_data in list_datas %}
+                                            <li>
+                                                <div class="display-list-parent">
+                                                    <div class="display-list-childs">
+                                                        <input type="checkbox">
+                                                    </div>
+                                                    <div class="display-list-childs">
+                                                        <p>{{list_data.todoList}}</p>
+                                                    </div>
+                                                    <div class="display-list-childs">
+                                                        <a href="/update/{{list_data.id}}" class="edit-btn"><i class="fa fa-pen"></i></a>
+                                                        <a href="/delete/{{list_data.id}}" class="delete-btn"><i class="fa fa-trash-alt"></i></a>
+                                                    </div>
+                                                </div>
+                                                <div class="display-date">
+                                                    <span> {{list_data.taskStart|timesince}} ago</span>
+                                                    <span class="mr-1 ml-1">|</span>
+                                                    <span>Deadline: {{list_data.taskEnd}}</span>
+                                                </div>
+                                            </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- todolist-section::end -->
+{% endblock content %}

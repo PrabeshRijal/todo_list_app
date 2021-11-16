@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App-{% block title %}{% endblock title %}</title>
+    <!-- bootstrap::begin -->
+    <link rel="stylesheet" href="{% static 'scss/bootstrap/bootstrap.min.css' %}">
+    <!-- bootstrap::end -->
+    <!-- fontawesome::begin -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" crossorigin="anonymous" />
+    <!-- fontawesome::end -->
+    <!-- global fonts::begin -->
+    <link rel="stylesheet" href="{% static 'scss/fonts/Roboto-Regular.ttf' %}">
+    <link rel="stylesheet" href="{% static 'scss/fonts/Raleway-Regular.ttf' %}">
+    <!-- global fonts::end -->
+    <!-- web style::begin -->
+    <link rel="stylesheet" href="{% static 'scss/custom-styles.css' %}">
+    <!-- web style::end -->
+</head>
+<body>
+    <section class="todo-list-master-section">
+        <!-- top-navigation-section::begin -->
+        <section class="top-navigation-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <div class="top-nav-parent">
+                            <div class="top-nav-childs">
+                                <h3>Todo List Application</h3>
+                            </div>
+                            <div class="top-nav-childs">
+                                <ul>
+                                    {% if request.user.is_authenticated %}
+                                    <li><a href="/logout">Logout <i class="fa fa-sign-out-alt"></i></a></li>
+                                    {% else %}
+                                    <li><a href="/login">Login</a></li>
+                                    <li><a href="#">|</a></li>
+                                    <li><a href="/register">Signup</a></li>
+                                    {% endif %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- top-navigation-section::end -->
+       {% block content %}{% endblock content %}
+    </section>
+</body>
+<!-- jquery:begin -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="{% static 'js/global.js' %}"></script>
+</html>
